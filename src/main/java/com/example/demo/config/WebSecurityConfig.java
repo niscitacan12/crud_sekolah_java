@@ -57,19 +57,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/login",
             "/register",
             // Film
-            "/belajar-spring/api/movies/all",
-            "/belajar-spring/api/movies/by-id/{id}",
+//            "/belajar-spring/api/movies/all",
+//            "/belajar-spring/api/movies/by-id/{id}",
             // Genre
-            "/belajar-spring/api/genre/all",
-            "/belajar-spring/api/genre/by-id/{id}",
+//            "/belajar-spring/api/genre/all",
+//            "/belajar-spring/api/genre/by-id/{id}",
             // Siswa
             "/belajar-spring/api/siswa/all",
             "/belajar-spring/api/siswa/by-id/{id}",
     };
 
     private static final String[] AUTH_ADMIN = {
-            "/belajar-spring/api/movies/**",
-            "/belajar-spring/api/genre/**",
+//            "/belajar-spring/api/movies/**",
+//            "/belajar-spring/api/genre/**",
             "/belajar-spring/api/siswa/**",
     };
 

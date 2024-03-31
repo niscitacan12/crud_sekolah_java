@@ -1,8 +1,8 @@
 package com.example.demo.service;
 
-import com.example.demo.model.SiswaModel;
-import com.example.demo.repository.SiswaRepository;
+import com.example.demo.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.repository.SiswaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +20,7 @@ public class SiswaService {
     public Optional<SiswaModel> getById(Long id) {
         return siswaRepository.findById(id);
     }
+
     // untuk Create Data
     public SiswaModel createData(SiswaModel siswaModel) {
         return siswaRepository.save(siswaModel);
@@ -31,10 +32,9 @@ public class SiswaService {
             SiswaModel existingSiswa = exiting.get();
             existingSiswa.setNisn(updatedSiswa.getNisn());
             existingSiswa.setNama_siswa(updatedSiswa.getNama_siswa());
-            existingSiswa.setUmur(updatedSiswa.getUmur());
             existingSiswa.setAlamat(updatedSiswa.getAlamat());
-            existingSiswa.setKelas(updatedSiswa.getKelas());
             existingSiswa.setJurusan(updatedSiswa.getJurusan());
+            existingSiswa.setTanggal_lahir(updatedSiswa.getTanggal_lahir());
             return siswaRepository.save(existingSiswa);
         } else {
             throw new IllegalArgumentException("Id siswa" + " tidak di temukan");

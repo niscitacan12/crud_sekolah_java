@@ -28,11 +28,12 @@ public class KelasService {
     public KelasModel updateData(Long id, KelasModel updatedKelas) {
         Optional<KelasModel> exiting = kelasRepository.findById(id);
         if (exiting.isPresent()) {
-            KelasModel existingSiswa = exiting.get();
-            existingSiswa.setWali_kelas(updatedKelas.getWali_kelas());
-            existingSiswa.setNama_kelas(updatedKelas.getNama_kelas());
-            existingSiswa.setNama_jurusan(updatedKelas.getNama_jurusan());
-            return kelasRepository.save(existingSiswa);
+            KelasModel existingKelas = exiting.get();
+            existingKelas.setNama_kelas(updatedKelas.getNama_kelas());
+            existingKelas.setNama_jurusan(updatedKelas.getNama_jurusan());
+            existingKelas.setTingkat_kelas(updatedKelas.getTingkat_kelas());
+            existingKelas.setKeterangan(updatedKelas.getKeterangan());
+            return kelasRepository.save(existingKelas);
         } else {
             throw new IllegalArgumentException("Id Kelas" + " tidak di temukan");
         }

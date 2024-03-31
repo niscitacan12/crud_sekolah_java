@@ -1,9 +1,9 @@
 package com.example.demo.repository;
 
-import com.example.demo.model.SekolahModel;
+import com.example.demo.model.GuruModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SekolahRepository extends JpaRepository<SekolahModel, Long> {
+public interface GuruRepository extends JpaRepository<GuruModel, Long> {
 }

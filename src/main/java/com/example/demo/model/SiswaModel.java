@@ -7,20 +7,21 @@ import javax.persistence.*;
 public class SiswaModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "nama_siswa")
     private String nama_siswa;
     @Column(name = "nisn")
-    private Long nisn;
-    @Column(name = "kelas")
-    private String kelas;
+    private int nisn;
     @Column(name = "jurusan")
     private String jurusan;
-    @Column(name = "umur")
-    private int umur;
     @Column(name = "alamat")
     private String alamat;
+    @Column(name = "tanggal_lahir")
+    private String tanggal_lahir;
+    @ManyToOne
+    @JoinColumn(name = "kelas_id")
+    private KelasModel kelasModel;
 
     public Long getId() {
         return id;
@@ -36,20 +37,6 @@ public class SiswaModel {
         this.nama_siswa = nama_siswa;
     }
 
-    public Long getNisn() {
-        return nisn;
-    }
-    public void setNisn(Long nisn) {
-        this.nisn = nisn;
-    }
-
-    public String getKelas() {
-        return kelas;
-    }
-    public void setKelas(String kelas) {
-        this.kelas = kelas;
-    }
-
     public String getJurusan() {
         return jurusan;
     }
@@ -57,17 +44,31 @@ public class SiswaModel {
         this.jurusan = jurusan;
     }
 
-    public int getUmur() {
-        return umur;
-    }
-    public void setUmur(int umur) {
-        this.umur = umur;
-    }
-
     public String getAlamat() {
         return alamat;
     }
     public void setAlamat(String alamat) {
         this.alamat = alamat;
+    }
+
+    public String getTanggal_lahir() {
+        return tanggal_lahir;
+    }
+    public void setTanggal_lahir(String tanggal_lahir) {
+        this.tanggal_lahir = tanggal_lahir;
+    }
+
+    public int getNisn() {
+        return nisn;
+    }
+    public void setNisn(int nisn) {
+        this.nisn = nisn;
+    }
+
+    public KelasModel getKelasModel() {
+        return kelasModel;
+    }
+    public void setKelasModel(KelasModel kelasModel) {
+        this.kelasModel = kelasModel;
     }
 }

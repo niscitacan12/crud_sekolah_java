@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.KelasModel;
-import com.example.demo.model.SiswaModel;
 import com.example.demo.service.KelasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/data_kelas")
+@CrossOrigin(origins = "*")
 public class KelasController {
 
     @Autowired
@@ -24,7 +24,7 @@ public class KelasController {
     }
 
     // untuk GetById
-    @GetMapping("/{id}")
+    @GetMapping("/kelas/{id}")
     public ResponseEntity<KelasModel> getById(@PathVariable Long id) {
         Optional<KelasModel> kelasModels = kelasService.getById(id);
         return kelasModels.map(value -> new ResponseEntity<>(value, HttpStatus.OK))

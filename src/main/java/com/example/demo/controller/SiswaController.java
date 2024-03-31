@@ -13,7 +13,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/data_siswa")
 public class SiswaController {
-    
+
     @Autowired
     private SiswaService siswaService;
     @GetMapping
