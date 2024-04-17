@@ -33,6 +33,7 @@ public class GuruService {
             existingGuru.setEmail(updatedGuru.getEmail());
             existingGuru.setJabatan(updatedGuru.getJabatan());
             existingGuru.setJenis_kelamin(updatedGuru.getJenis_kelamin());
+            existingGuru.setMapelModel(updatedGuru.getMapelModel());
             return guruRepository.save(existingGuru);
         } else {
             throw new IllegalArgumentException("Id siswa" + " tidak di temukan");

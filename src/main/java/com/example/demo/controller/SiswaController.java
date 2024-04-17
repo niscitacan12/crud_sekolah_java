@@ -16,7 +16,7 @@ public class SiswaController {
 
     @Autowired
     private SiswaService siswaService;
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<SiswaModel>> getAllData(){
         List<SiswaModel> siswaModels = siswaService.getAllData();
         return new ResponseEntity<>(siswaModels, HttpStatus.OK);
@@ -31,14 +31,14 @@ public class SiswaController {
     }
 
     // Untuk Add Data
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<SiswaModel> createData(@RequestBody SiswaModel siswaModel) {
         SiswaModel newData = siswaService.createData(siswaModel);
         return new ResponseEntity<>(newData, HttpStatus.OK);
     }
 
     // tambah data
-    @PutMapping("/{id}")
+    @PutMapping("/ubah/{id}")
     public ResponseEntity<SiswaModel> updateData(@PathVariable Long id, @RequestBody SiswaModel ubahSiswa) {
         SiswaModel putSiswa = siswaService.updateData(id, ubahSiswa);
         return new ResponseEntity<>(putSiswa, HttpStatus.OK);

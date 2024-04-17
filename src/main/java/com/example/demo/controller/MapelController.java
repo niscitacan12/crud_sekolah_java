@@ -17,7 +17,7 @@ public class MapelController {
 
     @Autowired
     private MapelService mapelService;
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<MapelModel>> getAllData(){
         List<MapelModel> mapelModels = mapelService.getAllData();
         return new ResponseEntity<>(mapelModels, HttpStatus.OK);
@@ -32,7 +32,7 @@ public class MapelController {
     }
 
     // Untuk Add Data
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<MapelModel> createData(@RequestBody MapelModel mapelModel) {
         MapelModel newData = mapelService.createData(mapelModel);
         return new ResponseEntity<>(newData, HttpStatus.OK);

@@ -33,8 +33,8 @@ public class SiswaService {
             existingSiswa.setNisn(updatedSiswa.getNisn());
             existingSiswa.setNama_siswa(updatedSiswa.getNama_siswa());
             existingSiswa.setAlamat(updatedSiswa.getAlamat());
-            existingSiswa.setJurusan(updatedSiswa.getJurusan());
             existingSiswa.setTanggal_lahir(updatedSiswa.getTanggal_lahir());
+            existingSiswa.setKelasModel(updatedSiswa.getKelasModel());
             return siswaRepository.save(existingSiswa);
         } else {
             throw new IllegalArgumentException("Id siswa" + " tidak di temukan");

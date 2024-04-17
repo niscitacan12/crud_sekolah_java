@@ -17,7 +17,7 @@ public class KelasController {
 
     @Autowired
     private KelasService kelasService;
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<KelasModel>> getAllData(){
         List<KelasModel> kelasModels = kelasService.getAllData();
         return new ResponseEntity<>(kelasModels, HttpStatus.OK);
@@ -26,13 +26,13 @@ public class KelasController {
     // untuk GetById
     @GetMapping("/kelas/{id}")
     public ResponseEntity<KelasModel> getById(@PathVariable Long id) {
-        Optional<KelasModel> kelasModels = kelasService.getById(id);
+        Optional<KelasModel> kelasModels =kelasService.getById(id);
         return kelasModels.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(()-> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     // Untuk Add Data
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<KelasModel> createData(@RequestBody KelasModel kelasModel) {
         KelasModel newData = kelasService.createData(kelasModel);
         return new ResponseEntity<>(newData, HttpStatus.OK);

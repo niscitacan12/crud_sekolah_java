@@ -16,7 +16,7 @@ public class GuruController {
 
     @Autowired
     private GuruService guruService;
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<GuruModel>> getAllData(){
         List<GuruModel> guruModels = guruService.getAllData();
         return new ResponseEntity<>(guruModels, HttpStatus.OK);
@@ -31,13 +31,12 @@ public class GuruController {
     }
 
     // Untuk Add Data
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<GuruModel> createData(@RequestBody GuruModel guruModel) {
         GuruModel newData = guruService.createData(guruModel);
         return new ResponseEntity<>(newData, HttpStatus.OK);
     }
 
-    // tambah data
     @PutMapping("/{id}")
     public ResponseEntity<GuruModel> updateData(@PathVariable Long id, @RequestBody GuruModel ubahGuru) {
         GuruModel putSekolah = guruService.updateData(id, ubahGuru);

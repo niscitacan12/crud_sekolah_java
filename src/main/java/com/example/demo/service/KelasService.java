@@ -17,7 +17,7 @@ public class KelasService {
     }
 
     // untuk getById
-    public Optional<KelasModel> getById(Long id) {
+    public Optional <KelasModel> getById(Long id) {
         return kelasRepository.findById(id);
     }
     // untuk Create Data

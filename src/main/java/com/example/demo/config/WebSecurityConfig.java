@@ -63,14 +63,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //            "/belajar-spring/api/genre/all",
 //            "/belajar-spring/api/genre/by-id/{id}",
             // Siswa
-            "/belajar-spring/api/siswa/all",
-            "/belajar-spring/api/siswa/by-id/{id}",
+            "/api/data_siswa/all",
+            "/api/data_kelas/all",
+            "/api/data_mapel/all",
+            "/api/data_guru/all",
     };
 
     private static final String[] AUTH_ADMIN = {
 //            "/belajar-spring/api/movies/**",
 //            "/belajar-spring/api/genre/**",
-            "/belajar-spring/api/siswa/**",
+            "/belajar-spring/api/data_siswa/**",
+            "/belajar-spring/api/data_kelas/**",
+            "/belajar-spring/api/data_mapel/**",
+            "/belajar-spring/api/data_guru/**",
     };
 
     @Override

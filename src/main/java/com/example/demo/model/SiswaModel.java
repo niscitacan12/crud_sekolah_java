@@ -13,8 +13,6 @@ public class SiswaModel {
     private String nama_siswa;
     @Column(name = "nisn")
     private int nisn;
-    @Column(name = "jurusan")
-    private String jurusan;
     @Column(name = "alamat")
     private String alamat;
     @Column(name = "tanggal_lahir")
@@ -36,14 +34,6 @@ public class SiswaModel {
     public void setNama_siswa(String nama_siswa) {
         this.nama_siswa = nama_siswa;
     }
-
-    public String getJurusan() {
-        return jurusan;
-    }
-    public void setJurusan(String jurusan) {
-        this.jurusan = jurusan;
-    }
-
     public String getAlamat() {
         return alamat;
     }
